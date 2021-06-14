@@ -20,45 +20,64 @@ function AddItem(props) {
   };
 
   return (
-    <div>
-      <h2>Add a item</h2>
-      <form action="">
-        <label htmlFor="name-field">Name:</label>
+    <div className="container">
+      <div className="row">
+        <h2>Add a item</h2>
+      </div>
+
+      <div className="row">
+        <label className="mt-1" htmlFor="name-field">
+          Name:
+        </label>
         <input
+          className="form-control"
           type="text"
           id="name-field"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-
-        <label htmlFor="price-field"> Price:</label>
+        <label className="mt-1" htmlFor="price-field">
+          {" "}
+          Price:
+        </label>
         <input
+          className="form-control"
           type="number"
           id="price-field"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-
-        <label htmlFor="type-field">Type:</label>
+        <label className="mt-1" htmlFor="type-field">
+          Type:
+        </label>
         <input
+          className="form-control"
           type="text"
           id="type-field"
           value={type}
           onChange={(e) => setType(e.target.value)}
         />
-
-        <label htmlFor="brand-field">Brand:</label>
+        <label className="mt-1" htmlFor="brand-field">
+          Brand:
+        </label>
         <input
+          className="form-control"
           type="text"
           id="brand-field"
           value={brand}
           onChange={(e) => setBrand(e.target.value)}
         />
+      </div>
 
-        <button type="button" onClick={AddItemButtonPressed}>
+      <div className="row mt-3">
+        <button
+          className="btn btn-primary"
+          type="button"
+          onClick={AddItemButtonPressed}
+        >
           Add Item
         </button>
-      </form>
+      </div>
     </div>
   );
 }

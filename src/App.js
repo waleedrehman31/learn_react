@@ -23,11 +23,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Hello</h1>
-      <SearchBar updateSearchParams={updateFilters} />
-      <ItemsDisplay items={data["items"]} />
-      <Additem setItem={addItemData} />
+    <div className="container">
+      <div className="row mt-3">
+        <ItemsDisplay items={data["items"]} />
+      </div>
+      <div className="row mt-3">
+        <SearchBar updateSearchParams={updateFilters} />
+      </div>
+      <div className="row mt-3">
+        <Additem setItem={addItemData} />
+      </div>
 
       {/* <p>Name: {"name" in filters ? filters["name"] : "No Data To Display"}</p>
       <p>
