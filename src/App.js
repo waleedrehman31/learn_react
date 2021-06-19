@@ -15,10 +15,20 @@ function App() {
 
   const addItemData = (item) => {
     let items = data["items"];
-    item.id = items.length;
-    items.push(item);
-    setData({ items: items });
-    console.log(data);
+
+    const requestOption = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    };
+    fetch("http://localhost:3000/items", requestOption)
+      .then((response) => response.json())
+      .then((data) => {
+        items.push(data);
+        setData({ items: items });
+      });
   };
 
   const filterData = (data) => {
