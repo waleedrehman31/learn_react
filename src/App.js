@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import SearchBar from "./SearchBar";
 import Additem from "./AddItem";
 import ItemsDisplay from "./ItemsDisplay";
+// import Test from "./Class";
 
 function App() {
   const [filters, setFilters] = useState({});
   const [data, setData] = useState({ items: [] });
+  // const [showTest, setShowTest] = useState(true);
+
+  // useEffect(() => {
+  //   console.log("Use Effect");
+  //   return () => {
+  //     console.log("Clean Up");
+  //   };
+  // }, [data, filters]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+      .then((response) => response.json())
+      .then((data) => setData({ items: data }));
+  }, []);
 
   const updateFilters = (searchParams) => {
     setFilters(searchParams);
@@ -67,7 +82,7 @@ function App() {
       <div className="row mt-3">
         <Additem setItem={addItemData} />
       </div>
-
+      {/* {showTest ? <Test destroy={setShowTest} /> : null} */}
       {/* <p>Name: {"name" in filters ? filters["name"] : "No Data To Display"}</p>
       <p>
         Max Price:{" "}
