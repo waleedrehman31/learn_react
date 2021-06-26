@@ -1,32 +1,3 @@
 {
-  "items": [
-    {
-      "name": "Waleed ur Rehman",
-      "price": "4.99",
-      "type": "New ",
-      "brand": "New2",
-      "id": 1
-    },
-    {
-      "name": "Waleed ur Rehman",
-      "price": "34",
-      "type": "dsf",
-      "brand": "af",
-      "id": 2
-    },
-    {
-      "name": "Waleed ur Rehman",
-      "price": "234",
-      "type": "fdg",
-      "brand": "dg",
-      "id": 3
-    },
-    {
-      "name": "Waleed ur Rehman",
-      "price": "3",
-      "type": "dfsaf",
-      "brand": "adf",
-      "id": 4
-    }
-  ]
+  "items": []
 }
